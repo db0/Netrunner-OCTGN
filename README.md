@@ -63,6 +63,14 @@ S[ee more screenshots here](https://docs.google.com/folder/d/0B-gMiPlH3rBAeHM1dF
 Changelog
 ---------
 
+### 3.0.2
+
+* Made custom fonts work again with new version of OCTGN
+
+### 3.0.1
+
+* The Shell traders should now work at the start of your turn instead of the end
+
 ### 3.0.0
 
 We are DONE ladies, gentlepeeps and people in between. Finished! Fertig! Finito! Τέλος!

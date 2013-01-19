@@ -3317,7 +3317,7 @@ def CustomScript(card, action = 'play'): # Scripts that are complex and fairly u
             else: 
                whisper("You need to select a valid target from your hand or the table to use this action")  
                return
-      elif action == 'TurnEnd':
+      elif action == 'TurnStart':
          targetList = [c for c in table  # We find all possible targets
                        if c.markers
                        and (c.Type == 'Program' or c.Type == 'Hardware')]
