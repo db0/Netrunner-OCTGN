@@ -1,3 +1,4 @@
+# coding: utf-8
     # Python Scripts for the Netrunner CCG definition for OCTGN
     # Copyright (C) 2012  Konstantine Thoukydides
 
@@ -14,6 +15,7 @@
     # You should have received a copy of the GNU General Public License
     # along with this script.  If not, see <http://www.gnu.org/licenses/>.
 
+    
 import re
 
 Advance = ("Advance", "73b8d1f2-cd54-41a9-b689-3726b7b86f4f")
@@ -609,9 +611,9 @@ def createStartingCards():
       storeSpecial(TC)   
 
 def intJackin(group, x = 0, y = 0):
-   if debugVerbosity >= 1: notify(">>> intJackin(){}".format(extraASDebug())) #Debug
    global ds, maxActions,newturn,endofturn, currAction, debugVerbosity
    global Stored_Type, Stored_Cost, Stored_Keywords, Stored_AutoActions, Stored_AutoScripts
+   if debugVerbosity >= 1: notify(">>> intJackin(){}".format(extraASDebug())) #Debug
    mute()
    debugVerbosity = -1 # Jackin means normal game.
    ds = ""
