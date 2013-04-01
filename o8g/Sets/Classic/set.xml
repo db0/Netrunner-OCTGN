@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<set xmlns:noNamespaceSchemaLocation="CardSet.xsd" name="Classic" id="af773077-911d-4d12-92e1-0ef28dc1948f" gameId="13568561-7a2e-4572-8f31-3d99580ab245" gameVersion="3.0.0" version="3.0.1">
+	<packaging>
+		<pack id="27e63d65-f579-4dde-82d4-2c772e6a6f51" name="Booster">
+			<pick qty="1" key="RaritySealed" value="corpRare" />
+			<pick qty="1" key="RaritySealed" value="runnerRare" />
+			<pick qty="3" key="RaritySealed" value="corpCommon" />
+			<pick qty="3" key="RaritySealed" value="runnerCommon" />
+		</pack>
+	</packaging>
+	<cards>
+		<card id="1c023752-448e-4c3a-8842-556a0956081d" name="Badtimes">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Operation" />
+			<property name="Keywords" value="Virus" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Play only if Runner is tagged. Runner's MU is reduced by 2 until end of turn." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;They always think it's a hoax.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="1" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:CreateDummy||whileRezzed:Lose2MU-onOpponent||atTurnEnd:TrashMyself" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="426f2c05-9db5-4350-b28c-cdb43e9d0b93" name="Baskerville">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="10" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Sentry-AP-Hellhound-Sleepy" />
+			<property name="Stat" value="4" />
+			<property name="Rules" value="@ Do 2 Net damage. @ Trace5– If trace is successful, give Runner a Baskerville counter. Each counter does 2 Net damage at the start of each run. Runner may remove a Baskerville counter by taking an action to spend [3]. @ End the run. If Runner has used a noisy icebreaker during this run, the cost to rez Baskerville is reduced by [5]. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="2" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPay:Reduce5CostRez-ifNoisyOpponent" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Inflict2NetDamage-onOpponent||A0B0G0T0:SimplyAnnounce{end the run}||A0B0G0T0:Trace5||A0B0G0T0:Infect1Baskerville-onOpponent" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="f6993313-8b94-440a-9bf5-3cf5bbec7b6f" name="Bolter Swarm">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="8" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Sentry-AP-Hellbolt-Sleepy" />
+			<property name="Stat" value="4" />
+			<property name="Rules" value="@ Do 4 Net damage. @ Runner cannot break any subroutines on the next piece of ice encountered during this run. If Runner has used a noisy icebreaker during this run, the cost to rez Bolter Swarm is reduced by [5]. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="3" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPay:Reduce5CostRez-ifNoisyOpponent" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Inflict4NetDamage-onOpponent||Simply Announce{stop the runner from breaking any subroutines on the next piece of ice encountered during this run}" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="921c6c1c-e838-4b9d-8ef1-f711fb921c43" name="Brain Drain">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Sentry-Black Ice-AP" />
+			<property name="Stat" value="3" />
+			<property name="Rules" value="@ Roll a die. On a 1, do 3 brain damage." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Weefs never look 'up.'&quot; -Edger" />
+			<property name="Artist" value="" />
+			<property name="Number" value="4" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Roll1Dice||Inflict3BrainDamage-onOpponent" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="0cab80e4-a06d-409c-89b4-c96490783fb7" name="Corporate Shuffle">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Operation" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Draw five cards, then shuffle a card stored in HQ into R&amp;D. (Playing a double operation costs two consecutive actions this turn instead of one.)" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;It's a shell game for the shareholders.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="5" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:Draw5Cards" />
+			<property name="ParamAS1" value="5" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="797b3eb1-8a28-4a5a-a10c-ec84790f99ff" name="Data Fort Remapping">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Agenda" />
+			<property name="Keywords" value="Gray Ops" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="Put a Remap counter on Data Fort Remapping when you score it. Remap Counter: End a run." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;In netspace, the map is often the territory. That's just one more reason we don't hire philosopy grads.&quot; -Dave Michaels" />
+			<property name="Artist" value="" />
+			<property name="Number" value="6" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onScore:Put1Remap" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Remove1Remap-isCost$$SimplyAnnounce{end the run}" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="1e75ce69-610a-4914-9ce6-6ca59c70359d" name="Deadeye">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="5" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Sentry-Killer-Sleepy" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="@ Trash a program. @ End the run. If Runner has used a noisy icebreaker during this run, the cost to rez Deadeye is reduced by [5]." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="Wakes up shooting at the drop of a hat" />
+			<property name="Artist" value="" />
+			<property name="Number" value="7" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPay:Reduce5CostRez-ifNoisyOpponent" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:SimplyAnnounce{end the run}||A0B0G0T0:TrashTarget-Targeted-atProgram" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="3d99ea9e-c942-4a7d-86b7-7d16dd2fd7ea" name="Dumpster">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="5" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Code Gate-Deflector" />
+			<property name="Stat" value="5" />
+			<property name="Rules" value="Dumpster cannot be installed on the Archives. @ Runner is now encountering the outermost piece of rezzed ice on the Archives, instead of passing Dumpster. The run is now considered to be a run on the Archives. If there is no rezzed ice on the Archives, Runner is considered to have passed the last piece of ice on the Archives." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="8" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:SimplyAnnounce{deflect the run to the Archives}" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="e0b42f06-6274-4976-937c-947c5002503d" name="Entrapment">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Code Gate-Deflector" />
+			<property name="Stat" value="4" />
+			<property name="Rules" value="@ If you pay [2], Runner is now encountering the outermost piece of rezzed ice on a data fort of your choice, instead of passing Entrapment. The run is now considered to be a run on that data fort. If there is no rezzed ice on that fort, Runner is considered to have passed the last piece of ice on that fort." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="9" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B2G0T0:SimplyAnnounce{deflect the run to target Data Fort}" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="19ea719d-a121-4ed1-b354-8c2d64e875ee" name="Glacier">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Wall" />
+			<property name="Stat" value="5" />
+			<property name="Rules" value="Rezzing Glacier cost 1 agenda point, in addition to the normal cost. @ End the run. @ End the run. [1]: Move Glacier to the outermost position of any other data fort. Use this ability only at the start of a run. You may use this ability even if Glacier is unrezzed, in which case, you reveal it." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="10" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onRez:Lose1Agenda Points-isCost" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:SimplyAnnounce{end the run}||A0B1G0T0:SimplyAnnounce{move Glacier to the outermost position of target data fort}-onAccess" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="c3e0761e-aab9-488e-b0de-a4fe55c12f99" name="Imperial Guard">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="10" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Sentry-Killer-Sleepy" />
+			<property name="Stat" value="5" />
+			<property name="Rules" value="@ Trash a program. @ End the run. If Runner has used a noisy icebreaker during this run, the cost to rez Imperial Guard is reduced by [5]." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="11" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPay:Reduce5CostRez-ifNoisyOpponent" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:TrashTarget-Targeted-atProgram||A0B0G0T0:SimplyAnnounce{end the run}" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="8b0a0ca5-d6d6-440f-8f81-4486d252a545" name="Indiscriminate Response Team">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Node" />
+			<property name="Keywords" value="Black Ops" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="After Runner makes a successful run, you may have Runner shuffle his or her hand into his or her stack and then draw as many cards as he or she had before." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;But did you get him?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="12" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:ReshuffleStack-warnReshuffleOpponent-ofOpponent$$Draw1Cards-perX-onOpponent" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="708ccc26-3847-4b3b-8f43-efb40073c08d" name="London City Grid">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="Region" />
+			<property name="Stat" value="6" />
+			<property name="Rules" value="Runner must pay [1], in addition to the normal cost, to use each subroutine of a noisy icebreaker during runs on this fort. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="London: home to Big Ben, Buckingham Palace, and some of the nastiest, most insidious, and downright brilliant code this side of the Pond." />
+			<property name="Artist" value="" />
+			<property name="Number" value="13" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="89abe50e-6c37-4fd2-ab8f-f80c5bd5e6e3" name="Puzzle">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Code Gate" />
+			<property name="Stat" value="5" />
+			<property name="Rules" value="@ End the run, and trash Puzzle at end of turn. @ End the run, and trash Puzzle at end of turn. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="14" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="atTurnEnd:Remove1Solved-isCost$$TrashMyself" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:SimplyAnnounce{end the run}$$Put1Solved" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="fbb3ee83-c0a7-4437-ae4b-70a39efb44c1" name="Reclamation Project">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Operation" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Search the archives for any number of ice cards. Show those cards to Runner, then store them in HQ. (Playing a double operation costs two consecutive actions this turn instead of one.)" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;The code's already there; why let it go to waste?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="15" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="08e5f4fc-ab2d-421e-ad04-c59f5a470829" name="Satellite Monitors">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Node" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="1" />
+			<property name="Rules" value="At the start of each of your turns, you may roll a die for each run Runner made during his or her last turn. For each 1, give Runner a tag." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Say, isn't that your daughter?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="16" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Roll1Dice" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="7190dac8-aad9-497a-8c0c-58888acb33e6" name="Self-Destruct">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="Ambush" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Install Self-Destruct only in a subsidiary data fort. [T] Trash all other cards installed in or on this data fort. Do 1 Net damage for each card successfully trashed in this way. Use this ability only when Runner accesses Self-Destruct." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;This'll ream our bottom line unless we reclassify data-entry clerks as 'consumables.'&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="17" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T1:Inflict1NetDamage-perTargetAny-byMe-TrashMulti-Targeted-byMe" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="f7dae0ad-08c7-4192-92b1-80993eb083b7" name="Shock Treatment">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="Ambush" />
+			<property name="Stat" value="5" />
+			<property name="Rules" value="When Runner accesses Shock Treatment, trash all pieces of hardware and two programs. Ignore this effect unless Runner has four or more tags." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Yo, Bob, red light. Bob? Red Light! Bob, c'mon - I'm serious! GAH! Now there's a fire and a red light! Bob?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="18" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:TrashMulti-Targeted-atProgram_or_Hardware-ifTagged4-onAccess" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="d19babc7-6f36-492f-9d1b-7215a1561826" name="Sterdroid">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[3], [T]: Choose a piece of ice. That ice's strength is doubled until end of turn. If this would raise the ice's strength above 10, ist strength becomes 10." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Runners love this one like bikers adore wires across roads.&quot; -Norman Niemann, WuTech security director" />
+			<property name="Artist" value="" />
+			<property name="Number" value="19" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B3G0T1:Put1PlusOne-perTargetProperty{Stat}-Targeted-atIce" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="a46e300e-b167-442a-a63a-9b33a559e7da" name="Strategic Planning Group">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Node" />
+			<property name="Keywords" value="Unique" />
+			<property name="Stat" value="4" />
+			<property name="Rules" value="Whenever you draw one or more cards, draw an extra card. Then place one of the drawn cards on the bottom of R&amp;D. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;We don't plot; we faciliate.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="20" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="whileRezzed:CustomScript" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="e256eee9-4cc7-48e1-b8f0-28396d182197" name="Street Enforcer">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="1" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="Sysop" />
+			<property name="Stat" value="3" />
+			<property name="Rules" value="At the start of each run on this data fort, Runner loses [X], where X is equal to the number of tags Runner has. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;I think you know why I'm here.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="21" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="58188906-00c0-4165-86f6-29149fbf50b8" name="Superserum">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Agenda" />
+			<property name="Keywords" value="Research" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="When you score Superserum, remove all Virus counters, and avoid receiving the next two Virus counters Runner gives to you." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;A holisitc approach to system immunology: its AI routines mark both computer viruses and suspect moles for deletion.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="22" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onScore:Remove999Virus$$Infect2protectionVirus" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="81b5d3ba-9197-44df-8de1-a5feaadc24ae" name="Theorem Proof">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="5" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Agenda" />
+			<property name="Keywords" value="Research" />
+			<property name="Stat" value="3" />
+			<property name="Rules" value="If Runner accesses Theorem Proof, he or she does not score it, but instead may install it as a 2 MU program that has the ability &quot;[A]: Score Theorem Proof&quot; but is removed from the game if it leaves play in any other way." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="23" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onLiberation:CustomScript" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="642f5b31-5729-4f03-a2fe-3429924d6d38" name="Trapdoor">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Code Gate-Deflector" />
+			<property name="Stat" value="3" />
+			<property name="Rules" value="Install Trapdoor only on R&amp;D or HQ. @ Runner is now encountering the outermost piece of rezzed ice on a subsidiary data fort of your choice, instead of passing Trapdoor. The run is now considered to be a run on that data fort. If there is no rezzed ice on that fort, Runner is considered to have passed the last piece of ice on that fort. Runner automatically breaks this subroutine if there are no subsidiary data forts." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="24" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:SimplyAnnounce{deflect the run to the target Subsidiary Data Fort}" />
+			<property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="e1411afc-f6ca-4b32-8ef4-4bfcea9c6b1d" name="Unlisted Research Lab">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Agenda" />
+			<property name="Keywords" value="Asset-Gray Ops" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="Draw an additional card at the start of each of your turns." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;You may feel some discomfort.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="25" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="atTurnStart:Draw1Cards" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="20842690-c6c8-40ab-9463-bc6a55247d04" name="Vortex">
+			<property name="Player" value="corp" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Ice" />
+			<property name="Keywords" value="Code Gate-Deflector" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="@ If you pay [2], Runner is now encountering the outermost piece of rezzed ice on a data fort of your choice, instead of passing Vortex. The run is now considered to be a run on that data fort. If there is no rezzed ice on that fort, Runner is considered to have passed the last piece of ice on that fort." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="26" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B2G0T0:SimplyAnnounce{deflect the run to the target Data Fort}" />
+			<property name="RaritySealed" value="corpCommon" />
+		</card>
+		<card id="9f5db6ba-f834-4fb3-8d74-ee1816174987" name="Boostergang Connections">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="7" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Trash your hand. Search your stack for as many cards as were successfuly trashed in this way and bring them into your hand. Shuffle your stack afterward." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;If you don't fear death, they're great to hang with.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="27" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="35830bc7-f693-4490-af7a-d05153540e88" name="Corruption">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Play only if you scored any agendas this turn. Lose all agenda points you scored this turn, and the Corp scores that many agenda points. Gain [10] per agenda point lost in this way, and the Corp gives you a tag." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Excuse me, Dave? Can I borrow 250,000 eb 'til payday?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="28" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:RequestInt-Msg{How many Agenda Points did you score this turn?}$$Lose1Agenda Points-perX-isCost$$Gain10Bits-perX$$Gain1Tags" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="ea3613c6-7321-4c25-a898-39e797ae5bfd" name="Crash Space">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Resource" />
+			<property name="Keywords" value="Unique" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Gain [1] at the start of each of your turns. All trace attempts are automatically successful, and give you a tag in addition to their other effects. If Crash Space leaves play lose [2]. [A] Trash Crash Space." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="29" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="atTurnStart:Gain1Bits||onTrash:Lose2Bits" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:TrashMyself" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="bf70a563-d00a-4580-98a9-64e1826cc887" name="Do the 'Drine™">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Suffer any amount of brain damage, but not enough to flatline you or to reduce your hand size to less than 0. Gain [4] for each point of brain damage you suffer in this way. This damage cannot be prevented." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;I may be stupid, but I'm rich!&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="30" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:RequestInt$$Inflict1BrainDamage-nonPreventable-perX$$Gain4Bits-perX" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="1faf731d-9f12-49dd-a3b0-2f2a1bfdaf6e" name="Early Worm">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker-Worm" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="[1]: Break wall subroutine. [2]: +3 strength" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;The Early Worm gets the bird ... from corporate sysops.&quot; -AI Boone" />
+			<property name="Artist" value="" />
+			<property name="Number" value="31" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B1G0T0:SimplyAnnounce{break wall subroutine}||A0B2G0T0:Put3PlusOne" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="b735d143-9bd2-4a26-ac8b-123180c7103f" name="Elena Laskova">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Resource" />
+			<property name="Keywords" value="Connection-Unique" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Whenever you play a prep, gain an additional [1] the first time you gain bits from its effet. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;... But somehow you never go away thinking you got the best of the deal.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="32" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="b116fdf6-a800-4b80-b35c-a6711db0cb67" name="Executive File Clerk">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Resource" />
+			<property name="Keywords" value="Connection-Hidden" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[2],[T]: Look at all cards stored in HQ." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;I only signed a noncompete agreement; it didn't say anything about nondisclosure.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="33" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B2G0T1:SimplyAnnounce{look at all cards stored in HQ}" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="519f48f3-399d-4145-8c5b-0e55f65c38b9" name="Finders Keepers">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="7" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Random" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Roll three dice. Gain that many bits. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Looks like both our luck's changed.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="34" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:Roll3Dice$$Gain1Bits-perX" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="428c3f35-8048-4dbf-87c9-96de551d84f3" name="Gypsy™ Schedule Analyzer">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Make a run on R&amp;D. If run is successful, do not access any cards. Instead, reveal cards one at a time from R&amp;D until you reveal an agenda card or there are no cards left in R&amp;D. Store the agenda, if any, in HQ and shuffle the other revealed cards, if any, into R&amp;D." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="35" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:RunR&amp;D" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:CustomScript" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="791c1023-edb2-4c92-b12d-8ac919fc445f" name="Library Search">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Make a run on R&amp;D or HQ. If run is successful, access two additional cards if you used no noisy icebreakers during the run and if no trace attempts were made during the run." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="36" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:RunGeneric" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="def2c46b-25d6-4238-be92-c7f2b60779d8" name="Little Black Box">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Hardware" />
+			<property name="Keywords" value="Deck" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Provides +1 MU and +1 hand size. Prevent up to 1 Net or brain damage each turn. Put [1] from the bank on Little Black Box when it is installed. Use this bit only to pay for increasing your link. If you use the bit, replace it from the bank at the start of your next turn." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="37" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="whileRezzed:Gain1MU$$Gain1Hand Size||onInstall:Put1Bits$$Put1protectionNetBrainDMG||atTurnStart:Refill1Bits$$Refill1protectionNetBrainDMG||whileRezzed:Reduce#CostUse-forBase Link" />
+			<property name="ParamAS1" value="1" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="5080a98c-b2a6-49c3-9ca7-3682c9ef41bf" name="Matador">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker-Killer" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[1]: Break sentry subroutine. [3]: +5 strength" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="This little fella really cuts through the bull." />
+			<property name="Artist" value="" />
+			<property name="Number" value="38" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B1G0T0:SimplyAnnounce{gain sentry subroutine}||A0B3G0T0:Put5PlusOne" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="ff78c830-06c8-4437-b03f-6912337983cb" name="Meat Upgrade">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Remove up to two tags, at no cost, and draw three cards. (Playing a double prep costs two consecutive actions this turn instead of one.)" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="They can make you gorgeous cheap, but to make you plain costs extra." />
+			<property name="Artist" value="" />
+			<property name="Number" value="39" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:Lose2Tags$$Draw3Cards" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="b4c454c6-9964-4110-8c2c-8408a7c189e7" name="MS-todon">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="4" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker-Killer-Noisy" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="[1]: Break sentry subroutine. [1]: +1 strength. The first time during each run that you break a sentry subroutine with MS-todon, lose all bits from all stealth cards, if you can, and the Corp gives you a tag." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="This isn't running - it's stomping." />
+			<property name="Artist" value="" />
+			<property name="Number" value="40" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="triggerNoisy999-Gain1Tag" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B1G0T0:SimplyAnnounce{break sentry subroutine}||A0B1G0T0:Put1PlusOne" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="f64a1e25-e1e7-4254-a349-3ca0485810fa" name="Networking">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Gain [9]. (Playing a double prep costs two consecutive actions this turn instead of one.)" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;It's not what you know or even who; it's how often.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="41" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:Gain9Bits" />
+			<property name="ParamAS1" value="9" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="2c411091-bbd3-443e-a859-981efa6323b0" name="Omnitech &quot;Spinal Tap&quot; Cybermodem">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="5" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Hardware" />
+			<property name="Keywords" value="Deck-Random" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Provides +1 Mu. Put [2] from the bank on Omnitech &quot;Spinal Tap&quot; Cybermodem when it is installed. Use this bits only to pay for using icebreakers during runs or increasing your link. If you use any of these bits, replace them at the start of your next turn.  At the start of each of your turns roll a die. On a 1, suffer 2 brain damage. This damage cannot be prevented.  If Omnitech &quot;Spinal Tap&quot; Cyermodem leaves play suffer 2 brain damage." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="42" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="whileRezzed:Gain2MU||onInstall:Put2Bits||whileRezzed:Reduce#CostUse-forBase Link||whileRezzed:Reduce#CostUse-forIcebreaker||onTrash:Inflict2BrainDamage||atTurnStart:Roll1Dice-chk1$$Inflict2BrainDamage-nonPreventable-perX" />
+			<property name="ParamAS1" value="1" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="e2efcb4e-3361-46bb-b3e7-951239a2212d" name="Omnitech Wet Drive">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Hardware" />
+			<property name="Keywords" value="Cybernetics" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Your base MU is equal to the number of cards in your hand instead of 4." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Now with reduced long-term memory loss!&quot; - Rejected marketing slogan" />
+			<property name="Artist" value="" />
+			<property name="Number" value="43" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="95545de0-a3f6-423d-a997-d7b4b166f91a" name="Panzer Run">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="1" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Gain [4] and draw two cards." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;So I just drive a truck from Point A to Point B? How hard can that be?&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="44" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onPlay:Gain4Bits$$Draw2Cards" />
+			<property name="ParamAS1" value="4" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="f12aaa95-4b80-4098-83fe-8b313d33f157" name="Psychic Friend">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker" />
+			<property name="Stat" value="1" />
+			<property name="Rules" value="[1]: Break code gate subroutine. [2]: +1 strength until end of turn" />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Call now for ten nanoseconds of icebreaking absolutely free! (10 eb each subsequent ns.)&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="45" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B1G0T0:SimplyAnnounce{break code gate subroutine}||A0B2G0T0:Put1PlusOne" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="af5bcccc-5aa0-4b8a-9449-b6a1f850a482" name="Rent-I-Con">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="2" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker" />
+			<property name="Stat" value="2" />
+			<property name="Rules" value="[1]: Break ice subroutine. At the end of this run, trash Rent-I-Con. [1]: +1 strength." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="It's big and mean and lasts about sixteen microseconds." />
+			<property name="Artist" value="" />
+			<property name="Number" value="46" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="atTurnEnd:Remove1Spent-isCost$$TrashMyself" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B1G0T0:SimplyAnnounce{break subroutine}$$Put1Spent||A0B1G0T0:Put1PlusOne" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="ad9595d7-509f-449c-8ea4-6a3ebfd139f6" name="Running Interference">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Double" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Make a run. During that run, the Corp must pay [X], in addition to the normal cost, to rez each piece of ice, where X is the rez cost of that piece of ice. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Look! A distraction!&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="47" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="57f1e427-a665-4515-b5cf-61d7d214bf64" name="Sandbox Dig">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Resource" />
+			<property name="Keywords" value="Hidden" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[3], [T]: Look at the top three cards stored in R&amp;D." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;As long as the drones keep griping online, I'm in business.&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="48" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B3G0T1:SimplyAnnounce{look at the top three cards stored in R&amp;D" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="b63f3b45-e4f1-426d-b1a3-2db0978c8dfd" name="Schematics Search Engine">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Whenever you access cards from HQ, expose all of the Corp's installed cards. " />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Not only is the map the terrain - somtimes you can only get places by folding the map.&quot; -Edger" />
+			<property name="Artist" value="" />
+			<property name="Number" value="49" />
+			<property name="Rarity" value="Rare" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:ExposeMulti-Targeted" />
+			<property name="RaritySealed" value="runnerRare" />
+		</card>
+		<card id="13cda53f-3daf-4719-8d3a-607b67b84b09" name="Superglue">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="2" />
+			<property name="MU Required" value="1" />
+			<property name="Type" value="Program" />
+			<property name="Keywords" value="Icebreaker" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[T]: Derez a piece of ice. Use this ability only if you have just broken all the subroutines of that piece of ice." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Epoxy both your houses!&quot; -Bard" />
+			<property name="Artist" value="" />
+			<property name="Number" value="50" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T1:DerezTarget-Targeted-atIce" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="8e3c2b5f-e572-4812-8bff-a85728101972" name="Vintage Camaro">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="1" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Hardware" />
+			<property name="Keywords" value="Vehicle" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="[1], Forgo your next action: Avoid receiving a tag." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;I'm not firing a LAW at that! It's a classic!&quot;" />
+			<property name="Artist" value="" />
+			<property name="Number" value="51" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="" />
+			<property name="ParamAS1" value="0" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="A0B0G0T0:Infect1forfeitCounter:Actions$$Lose1Tags" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+		<card id="076ee915-b9f8-45f3-b26a-c8e89c391960" name="Zetatech Portastation">
+			<property name="Player" value="runner" />
+			<property name="Cost" value="3" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Hardware" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Put [1] from the bank on Zetatech Portostation when it is installed. Use this bit only to pay for playing preps. If you use the bit, replace it from the bank at the start of your next turn." />
+			<property name="Errata" value="" />
+			<property name="Flavor" value="&quot;Zetatech. All you need is a brain, a deck, and a afriend.&quot; - Short-lived WNS ad campaign" />
+			<property name="Artist" value="" />
+			<property name="Number" value="52" />
+			<property name="Rarity" value="Common" />
+			<property name="Tags" value="" />
+			<property name="AutoScript" value="onInstall:Put1Bits||whileRezzed:Reduce#CostPlay-forPrep||atTurnStart:Refill1Bits" />
+			<property name="ParamAS1" value="1" />
+			<property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+			<property name="RaritySealed" value="runnerCommon" />
+		</card>
+	</cards>
+</set>
