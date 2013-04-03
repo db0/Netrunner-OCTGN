@@ -13,7 +13,7 @@
       authors="Db0, toon"
       iconurl="https://raw.github.com/db0/Netrunner-OCTGN/master/netrunner_logo.jpg">
 	<scripts>
-		<script src="Scripts/scripts1.py" />
+		<script src="Scripts/actions.py" />
 	</scripts>
    <fonts>
        <font src="Fonts/CyberpunkIsNotDead.ttf" size="11" target="context"/> 
