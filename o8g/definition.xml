@@ -54,6 +54,7 @@
 			<groupaction menu="Switch Damage Automation ON/OFF" default="False" execute="switchDMGAutomation" />  
 			<groupaction menu="Switch Automatic Damage Prevention ON/OFF" default="False" execute="switchPreventDMGAutomation" />  
 			<groupaction menu="Disable all &quot;Newbie&quot; Warnings" default="False" shortcut="Ctrl+Shift+N" execute="ImAProAtThis" />  
+			<groupaction menu="Download Sets Card Images." shortcut="Ctrl+G" default="False" execute="download_o8c" />
 			<groupaction menu="Debug" default="False" shortcut="Ctrl+Shift+D" execute="TrialError" /> 
 		</groupactions>
 		<groupactions menu="Turns/Actions...">

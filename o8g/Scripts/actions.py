@@ -282,6 +282,8 @@ def sortPriority(cardList):
       notify("<<< sortPriority() returning {}".format(tlist)) #Debug
    return sortedList
 
+def download_o8c(group,x=0,y=0):
+   openUrl("http://dbzer0.com/pub/Netrunner/sets/Netrunner-Sets-Bundle.o8c")
 #---------------------------------------------------------------------------
 # Generic Netrunner functions
 #---------------------------------------------------------------------------
