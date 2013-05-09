@@ -7,7 +7,7 @@
             <border color="#440044" size="1" />
          </block>
       </blocks>
-      <template src="Proxy/White_Card_Template.png" default="True">
+      <template src="Proxy/Missing_Proxies_Template.png" default="True">
          <matches>
             <match name="Name" value="Whetever" />
          </matches>
