@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<set xmlns:noNamespaceSchemaLocation="CardSet.xsd" name="Promos" id="d296a916-3b50-41e1-8638-46c57e784173" gameId="13568561-7a2e-4572-8f31-3d99580ab245" gameVersion="3.0.0" version="3.0.1">
+	<cards>
+		<card id="df81619e-44a5-4625-9142-415f6d3b5c1a" name="Forged Activation Orders">
+			<property name="Player" value="Runner" />
+			<property name="Cost" value="1" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="Sabotage" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Choose a piece of unrezzed ice. The Corp either rezzes that piece of ice or trashes it." />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="Mark Maxwell" />
+			<property name="Number" value="1" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+			<property name="AutoAction" value="" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="6c3e6488-bbba-4ec8-beaf-7bae16aa6c4d" name="misc.for-sale">
+			<property name="Player" value="Runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Prep" />
+			<property name="Keywords" value="BBS" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="Trash any number of your installed cards. Gain [3] for each card successfully trashed in this way." />
+			<property name="Flavor" value="&quot;Why throw it away when you can convince some half-brained weef to use it for creative suicide instead?&quot; - Rache Bartmoss" />
+			<property name="Artist" value="Douglas Shuler" />
+			<property name="Number" value="2" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="nPlay:Gain3Bits-perTargetAny-byMe$$TrashMulti-Targeted-byMe" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+         <property name="AutoAction" value="" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="c8ac69cb-0762-4918-9115-243dba9aa1c2" name="The Shell Traders">
+			<property name="Player" value="Runner" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Resource" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="A: Choose a program or hardware card from your hand. Set that card aside, and put a number of Shell counters on it equal to its installation cost. When the last Shell counter on that card has been removed, install that card, at no cost. Remove one Shell counter from one card at the start of each of your turns." />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="3" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="atTurnStart:CustomScript" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+         <property name="AutoAction" value="A1B0G0T0:CustomScript" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="608f33a9-c8b5-48cc-94d0-1032aa8eb147" name="Pacifica Regional AI">
+			<property name="Player" value="Corporation" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Node" />
+			<property name="Keywords" value="AI" />
+			<property name="Stat" value="0" />
+			<property name="Rules" value="You may advance Pacifica Regional AI before and after you rez it. Regional AI advancement counter: Gain an action." />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="4" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+         <property name="AutoAction" value="A0B0G0T0:Use1Advance$$Gain1Actions" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="bdfb9cd8-d116-4df3-9cf0-16b8c4dbe4ec" name="Bizarre Encryption Scheme">
+			<property name="Player" value="Corporation" />
+			<property name="Cost" value="0" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="" />
+			<property name="Stat" value="1" />
+			<property name="Rules" value="Runner does not score any agenda (or agendas) during a run in which Bizarre Encryption Scheme is accessed  return that agenda to the fort instead. Runner scores the agenda at the start of his or her next turn if neither you nor Runner has scored it by then. This does not affect any further runs." />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="5" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+         <property name="AutoAction" value="" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+		<card id="2532bc09-1411-481c-a8b5-db0f26b13636" name="New Galveston City Grid">
+			<property name="Player" value="Corporation" />
+			<property name="Cost" value="1" />
+			<property name="MU Required" value="0" />
+			<property name="Type" value="Upgrade" />
+			<property name="Keywords" value="Region" />
+			<property name="Stat" value="4" />
+			<property name="Rules" value="All nodes and other upgrades installed inside this fort cost [2], in addition to the normal cost, to trash. Rez a region when you install it. Install a region only if you can pay to rez it. Only one region may be installed in each fort. Trash older ones." />
+			<property name="Flavor" value="" />
+			<property name="Artist" value="" />
+			<property name="Number" value="6" />
+			<property name="Rarity" value="Promotional" />
+			<property name="Tags" value="" />
+         <property name="AutoScript" value="" />
+         <property name="ParamAS1" value="0" />
+         <property name="ParamAS2" value="0" />
+         <property name="AutoAction" value="" />
+         <property name="RaritySealed" value="corpRare" />
+		</card>
+	</cards>
+</set>
