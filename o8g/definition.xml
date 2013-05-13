@@ -8,8 +8,8 @@
       markersize="16"
       tags="asymmetric cyberpunk CCG bluff duel"
       description="This is the original Netrunner game from 1996!&#xD;&#xD;&#xD;Netrunner s an asymmetrical cyberpunk Card Game for two players.&#xD;&#xD;Set in the dystopian future of Cyberpunk 2020, the game pits an anonymous megacorporation and its massive resources against the subversive talents of lone runners.&#xd;&#xd;Automation rank: A&#xd;(This game definition contains significant cards automations to allow the game to play faster with less mistakes.)"
-      setsurl="http://octgn.gamersjudgement.com/viewtopic.php?f=40&amp;t=361"
-      gameurl="https://github.com/db0/Netrunner-OCTGN"
+      setsurl="https://github.com/db0/Netrunner-OCTGN#available-sets"
+      gameurl="https://github.com/db0/Netrunner-OCTGN#netrunner-ccg-plugin-for-octgn"
       authors="Db0, toon"
       iconurl="https://raw.github.com/db0/Netrunner-OCTGN/master/netrunner_logo.jpg">
 	<scripts>
