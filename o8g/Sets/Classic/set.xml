@@ -974,7 +974,7 @@
 			<property name="Cost" value="2" />
 			<property name="MU Required" value="1" />
 			<property name="Type" value="Program" />
-			<property name="Keywords" value="Icebreaker" />
+			<property name="Keywords" value="" />
 			<property name="Stat" value="0" />
 			<property name="Rules" value="Whenever you access cards from HQ, expose all of the Corp's installed cards. " />
 			<property name="Errata" value="" />
@@ -994,7 +994,7 @@
 			<property name="Cost" value="2" />
 			<property name="MU Required" value="1" />
 			<property name="Type" value="Program" />
-			<property name="Keywords" value="Icebreaker" />
+			<property name="Keywords" value="" />
 			<property name="Stat" value="0" />
 			<property name="Rules" value="[T]: Derez a piece of ice. Use this ability only if you have just broken all the subroutines of that piece of ice." />
 			<property name="Errata" value="" />

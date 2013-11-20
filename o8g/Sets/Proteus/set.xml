@@ -621,7 +621,7 @@
 			<property name="Player" value="corp" />
 			<property name="Cost" value="0" />
 			<property name="MU Required" value="0" />
-			<property name="Type" value="Upgrade" />
+			<property name="Type" value="Node" />
 			<property name="Keywords" value="Asset" />
 			<property name="Stat" value="4" />
 			<property name="Rules" value="You may advance LDL Traffic Analyzers before and after you rez it. You may rez LDL Traffic Analyzers during a trace attempt. LDL Traffic Analyzers advancement counter: Gain [5]. Use this ability only during a trace attempt. When the trace attempt ends, return to the bank any of the [5] you did not spend." />

@@ -1,5 +1,9 @@
 Changelog
 ---------
+### 3.1.1.x
+
+* Fixed some card typos and bad keywords
+
 ### 3.1.0.x
 
 * Version made to work with the OCTGN 3.1.x

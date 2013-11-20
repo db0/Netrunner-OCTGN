@@ -1306,8 +1306,8 @@
              <property name="Type" value="Ice" />
              <property name="Keywords" value="Code Gate" />
              <property name="Stat" value="3" />
-             <property name="Rules" value="@ Trash a program.@ End the run." />
-             <property name="Artist" value="Kevin Taylor" />
+             <property name="Rules" value="@ End the run." />
+             <property name="Artist" value="Daniel Gelon" />
              <property name="Rarity" value="Common" />
              <property name="AutoScript" value="" />
              <property name="ParamAS1" value="0" />
@@ -1322,8 +1322,8 @@
              <property name="Type" value="Ice" />
              <property name="Keywords" value="Sentry-Killer" />
              <property name="Stat" value="4" />
-             <property name="Rules" value="@ End the run." />
-             <property name="Artist" value="Daniel Gelon" />
+             <property name="Rules" value="@ Trash a program.@ End the run." />
+             <property name="Artist" value="Kevin Taylor" />
              <property name="Rarity" value="Uncommon" />
              <property name="AutoScript" value="" />
              <property name="ParamAS1" value="0" />
@@ -5530,13 +5530,13 @@
              <property name="Type" value="Resource" />
              <property name="Keywords" value="BBS" />
              <property name="Stat" value="0" />
-             <property name="Rules" value="[3]: Avoid receiving a tag." />
-             <property name="Artist" value="L.A. Williams" />
+             <property name="Rules" value="A: Look at the top four cards of your stack. You may bring any prep or resource cards among them into your hand. Pay [1] for each card taken in this way, and show those cards to the Corp. Shuffle the rest back into your stack." />
+             <property name="Artist" value="Robert McLees" />
              <property name="Rarity" value="Rare" />
              <property name="AutoScript" value="" />
              <property name="ParamAS1" value="0" />
              <property name="ParamAS2" value="0" />
-             <property name="AutoAction" value="A0B3G0T0:Lose1Tags" />
+             <property name="AutoAction" value="" />
              <property name="RaritySealed" value="runnerRare" />
         </card>
         <card id="24e545cb-42f6-421e-b5f5-994e46b1eae1" name="Nasuko Cycle">
@@ -5546,8 +5546,8 @@
              <property name="Type" value="Hardware" />
              <property name="Keywords" value="Vehicle" />
              <property name="Stat" value="0" />
-             <property name="Rules" value="A: Look at the top four cards of your stack. You may bring any prep or resource cards among them into your hand. Pay [1] for each card taken in this way, and show those cards to the Corp. Shuffle the rest back into your stack." />
-             <property name="Artist" value="Robert McLees" />
+             <property name="Rules" value="[3]: Avoid receiving a tag." />
+             <property name="Artist" value="L.A. Williams" />
              <property name="Rarity" value="Vital" />
              <property name="AutoScript" value="" />
              <property name="ParamAS1" value="0" />
