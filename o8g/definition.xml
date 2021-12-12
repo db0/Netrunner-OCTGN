@@ -46,7 +46,9 @@
 		<property name="RaritySealed" type="String" hidden="True" ignoreText="True" textKind="Enum" />
 
 	</card>
-	<table name="Table" visibility="undefined" ordered="False" width="1080" height="671" board="Table/nr_board.png" boardPosition="-540,-335,1080,671" background="Table/background.jpg" backgroundStyle="uniformToFill">
+	<gameboards src="Table/nr_board.png" x="-540" y="-335" width="1080" height="671">
+	</gameboards>
+	<table name="Table" visibility="undefined" ordered="False" width="1080" height="671" background="Table/background.jpg" backgroundStyle="uniformToFill">
 		<cardaction menu="Use Card Ability/Clear" default="True" execute="useAbility" />
 		<cardaction menu="Clear Card" default="False" execute="clear" />
 		<groupactions menu="Game...">
