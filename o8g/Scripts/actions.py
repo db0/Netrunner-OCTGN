@@ -318,14 +318,14 @@ def cwidth(card, divisor = 10):
 # Thus, no matter what the size of the table and cards becomes, the distances used will be relatively the same.
 # The default is to return an offset equal to 1/10 of the card width. A divisor of 0 means no offset.
    if divisor == 0: offset = 0
-   else: offset = card.width() / divisor
-   return (card.width() + offset)
+   else: offset = card.width / divisor
+   return (card.width + offset)
 
 def cheight(card, divisor = 10):
    #if debugVerbosity >= 1: notify(">>> cheight(){}".format(extraASDebug())) #Debug
    if divisor == 0: offset = 0
-   else: offset = card.height() / divisor
-   return (card.height() + offset)
+   else: offset = card.height / divisor
+   return (card.height + offset)
 
 def yaxisMove(card):
    #if debugVerbosity >= 1: notify(">>> yaxisMove(){}".format(extraASDebug())) #Debug
