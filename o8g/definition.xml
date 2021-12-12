@@ -14,6 +14,8 @@
       authors="Db0, toon"
       iconurl="https://raw.github.com/db0/Netrunner-OCTGN/master/netrunner_logo.jpg">
 	<scripts>
+		<script src="Scripts/constants.py" />
+		<script src="Scripts/pileactions.py" />
 		<script src="Scripts/actions.py" />
 	</scripts>
    <fonts>
