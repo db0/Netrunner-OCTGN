@@ -90,7 +90,7 @@ def chooseSide(): # Called from many functions to check if the player has chosen
    mute()
    global playerside, playeraxis
    if playerside == None:  # Has the player selected a side yet? If not, then...
-     if me.hasInvertedTable():
+     if me.isInverted:
         playeraxis = Yaxis
         playerside = -1
      else:
@@ -332,7 +332,7 @@ def yaxisMove(card):
 # Variable to move the cards played by player 2 on a 2-sided table, more towards their own side. 
 # Player's 2 axis will fall one extra card length towards their side.
 # This is because of bug #146 (https://github.com/kellyelton/OCTGN/issues/146)
-   if me.hasInvertedTable(): cardmove = cheight(card)
+   if me.isInverted: cardmove = cheight(card)
    else: cardmove = cardmove = 0
    return cardmove
 
