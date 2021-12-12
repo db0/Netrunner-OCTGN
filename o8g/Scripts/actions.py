@@ -327,12 +327,12 @@ def cheight(card, divisor = 10):
    else: offset = card.height / divisor
    return (card.height + offset)
 
-def yaxisMove(card):
+def yaxisMove(card, divisor = 50):
    #if debugVerbosity >= 1: notify(">>> yaxisMove(){}".format(extraASDebug())) #Debug
 # Variable to move the cards played by player 2 on a 2-sided table, more towards their own side. 
 # Player's 2 axis will fall one extra card length towards their side.
 # This is because of bug #146 (https://github.com/kellyelton/OCTGN/issues/146)
-   if me.isInverted: cardmove = cheight(card)
+   if me.isInverted: cardmove = cheight(card, divisor)
    else: cardmove = cardmove = 0
    return cardmove
 
@@ -486,17 +486,24 @@ def ImAProAtThis(group = table, x=0, y=0):
 #------------------------------------------------------------------------------
 
 def createStartingCards():
+   placement_offset_divisor = 50
    if debugVerbosity >= 1: notify(">>> createStartingCards(){}".format(extraASDebug())) #Debug
    traceCard = table.create("c0f18b5a-adcd-4efe-b3f8-7d72d1bd1db8", 0, 155 * playerside, 1, True) #The Trace card
+   traceCard.moveToTable(0,155*playerside - yaxisMove(traceCard,placement_offset_divisor),True)
    storeSpecial(traceCard)
    if ds == "corp":
-      table.create("2a0b57ca-1714-4a70-88d7-25fdf795486f", 150, 160 * playerside, 1, True)
-      table.create("181de100-c255-464f-a4ed-4ac8cd728c61", 300, 160 * playerside, 1, True)
-      table.create("59665835-0b0c-4710-99f7-8b90377c35b7", 450, 160 * playerside, 1, True)
+      card_ref= table.create("2a0b57ca-1714-4a70-88d7-25fdf795486f", 150, 160 * playerside, 1, True)
+      card_ref.moveToTable(150,160*playerside - yaxisMove(card_ref,placement_offset_divisor),True)
+      card_ref=table.create("181de100-c255-464f-a4ed-4ac8cd728c61", 300, 160 * playerside, 1, True)
+      card_ref.moveToTable(300,160*playerside - yaxisMove(card_ref,placement_offset_divisor),True)
+      card_ref=table.create("59665835-0b0c-4710-99f7-8b90377c35b7", 450, 160 * playerside, 1, True)
+      card_ref.moveToTable(450,160*playerside - yaxisMove(card_ref,placement_offset_divisor),True)
       AV = table.create("feaadfe5-63fc-443e-b829-b9f63c346d11", 0, 250 * playerside, 1, True) # The Virus Scan card.
+      AV.moveToTable(0,250*playerside - yaxisMove(AV,placement_offset_divisor),True)
       storeSpecial(AV)
    else:
       TC = table.create("f58c40eb-bb11-4bad-9562-030d906ea352", 0, 250 * playerside, 1, True) # The Technical Difficulties card.
+      TC.moveToTable(0,250*playerside - yaxisMove(TC,placement_offset_divisor),True)
       storeSpecial(TC)   
 
 def intJackin(group, x = 0, y = 0):
