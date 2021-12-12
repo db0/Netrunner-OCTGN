@@ -18,6 +18,7 @@
     
 import re
 
+
 Advance = ("Advance", "73b8d1f2-cd54-41a9-b689-3726b7b86f4f")
 Generic = ("Generic", "b384957d-22c5-4e7d-a508-3990c82f4df6")
 Bits = ("Bits", "19be5742-d233-4ea1-a88a-702cfec930b1")
@@ -71,121 +72,7 @@ failedRequirement = True #A Global boolean that we set in case an Autoscript cos
 lastKnownNrActions = 0 # A Variable keeping track of what the engine thinks our action counter should be, in case we change it manually.
 
 debugVerbosity = -1
-#---------------------------------------------------------------------------
-# Constants
-#---------------------------------------------------------------------------
 
-mdict = dict( # A dictionary which holds all the hard coded markers (in the markers file)
-             Advance =                 ("Advance", "73b8d1f2-cd54-41a9-b689-3726b7b86f4f"),
-             Generic =                 ("Generic", "b384957d-22c5-4e7d-a508-3990c82f4df6"),
-             Bits =                    ("Bits", "19be5742-d233-4ea1-a88a-702cfec930b1"),
-             Scored =                  ("Scored", "10254d1f-6335-4b90-b124-b01ec131dd07"),
-             Not_rezzed =              ("Not rezzed", "8105e4c7-cb54-4421-9ae2-4e276bedee90"),
-             Derezzed =                ("Derezzed", "ae34ee21-5309-46b3-98de-9d428f59e243"),
-             Trace_value =             ("Trace value", "01feb523-ac36-4dcd-970a-515aa8d73e37"),
-             Link_value =              ("Link value", "3c429e4c-3c7a-49fb-96cc-7f84a63cc672"),
-             PlusOnePerm =             ("Permanent +1", "f6230db2-d222-445f-85dd-406ea12d92f6"),
-             PlusOne=                  ("Temporary +1", "aa261722-e12a-41d4-a475-3cc1043166a7"),
-             MinusOne=                 ("Temporary -1", "48ceb18b-5521-4d3f-b5fb-c8212e8bcbae"),
-             DaemonMU =                ("Daemon MU", "6e46d937-786c-4618-b02c-d7d5ffd3b1a5"),
-             BaseLink =                ("Base Link", "226b0f44-bbdc-4960-86cd-21f404265562"),
-             virusButcherBoy =         ("Butcher Boy virus","5831fb18-7cdf-44d2-8685-bdd392bb9f1c"),
-             virusCascade =            ("Cascade virus","723a0cca-7a05-46a8-a681-6e06666042ee"),
-             virusCockroach =          ("Cockroach virus","cda4cfcb-6f2d-4a7f-acaf-d796b8d1edee"),
-             virusGremlin =            ("Gremlin virus","032d2efa-e722-4218-ba2b-699dc80f0b94"),
-             virusThought =            ("Thought virus","811b9153-93cb-4898-ad9f-68864452b9f4"),
-             virusFait =               ("Fait virus","72c89567-72aa-446d-a9ea-e158c22c113a"),
-             virusBoardwalk =          ("Boardwalk virus","8c48db01-4f12-4653-a31a-3d22e9f5b6e9"),
-             virusIncubate =           ("Incubate virus","eccc2ee3-2bca-4563-8196-54de4909d313"),
-             virusPattel =             ("Pattel virus","93a124c4-d2fe-4f58-9531-1396675c64dd"),
-             protectionMeatDMG =       ("Meat Damage protection","f50fbac7-a147-4941-8d77-56cf9ea672ea"),
-             protectionNetDMG =        ("Net Damage protection","84527bb1-6b34-4ace-9b11-7e19a6e353c7"),
-             protectionBrainDMG =      ("Brain damage protection","8a0612d7-202b-44ec-acdc-84ff93e7968d"),
-             protectionNetBrainDMG =   ("Net & Brain Damage protection","42072423-2599-4e70-80b6-56127b7177d9"),
-             protectionAllDMG =        ("Complete Damage protection","04d72620-17d1-4189-9abb-a2c48ddf7d42"),
-             protectionVirus =         ("Virus protection","6242317f-b706-4e39-b60a-32958d00a8f8"),
-             BrainDMG =                ("Brain Damage","05250943-0c9f-4486-bb96-481c025ce0e0"))
-
-             
-regexHooks = dict( # A dictionary which holds the regex that then trigger each core command. 
-                   # This is so that I can modify these "hooks" only in one place as I add core commands and modulators.
-                  GainX =              re.compile(r'\b(Gain|Lose|SetTo)([0-9]+)'),
-                  CreateDummy =        re.compile(r'\bCreateDummy'),
-                  ReshuffleX =         re.compile(r'\bReshuffle([A-Za-z& ]+)'),
-                  RollX =              re.compile(r'\bRoll([0-9]+)'),
-                  RequestInt =         re.compile(r'\bRequestInt'),
-                  DiscardX =           re.compile(r'\bDiscard[0-9]+'),
-                  TokensX =            re.compile(r'\b(Put|Remove|Refill|Use|Infect)([0-9]+)'),
-                  TransferX =          re.compile(r'\bTransfer([0-9]+)'),
-                  DrawX =              re.compile(r'\bDraw([0-9]+)'),
-                  ShuffleX =           re.compile(r'\bShuffle([A-Za-z& ]+)'),
-                  RunX =               re.compile(r'\bRun([A-Za-z& ]+)'),
-                  TraceX =             re.compile(r'\bTrace([0-9]+)'),
-                  InflictX =           re.compile(r'\bInflict([0-9]+)'),
-                  ModifyStatus =       re.compile(r'(Rez|Derez|Expose|Trash|Uninstall|Possess|Exile)'),
-                  SimplyAnnounce =     re.compile(r'\bSimplyAnnounce'),
-                  ChooseKeyword =      re.compile(r'\bChooseKeyword'),
-                  CustomScript =       re.compile(r'\bCustomScript'),
-                  UseCustomAbility =   re.compile(r'\bUseCustomAbility'))
-
-automatedMarkers = [ #Used in the Inspect() command to let the player know if the card has automations based on the markers it puts out.
-         'Rent-to-Own Contract',
-         'Data Raven'
-         'Fang'
-         'Fang 2.0'
-         'Fragmentation Storm'
-         'Rex'
-         'Cerberus'
-         'Doppelganger Antibody'
-         'Armageddon'
-         'Baskerville'
-         'The Shell Traders'
-         'Butcher Boy',
-         'Boardwalk',
-         'Incubator',
-         'Viral Pipeline',
-         'Taxman',
-         'Skivviss',
-         'Scaldan']
-
-markerRemovals = { # A dictionary which holds the costs to remove various special markers.
-                       # The costs are in a tuple. First is actions cost and then is bit cost.
-                     'Fang' :                        (1,2),
-                     'Data Raven' :                  (1,1),
-                     'Fragmentation Storm' :         (1,1),
-                     'Rex' :                         (1,2),
-                     'Crying' :                      (1,2),
-                     'Cerberus' :                    (1,4),
-                     'Baskerville' :                 (1,3),
-                     'Doppelganger' :                (1,4),
-                     'Mastiff' :                     (1,4)}
-turns = [
-   'Start of Game',
-   "It is now Corporation's Turn",
-   "It is now Runner's Turn",
-   "It is now End of Turn"]
-
-trashEasterEgg = [
-   "You really shouldn't try to trash this kind of card.",
-   "No really, stop trying to trash this card. You need it.",
-   "Just how silly are you?",
-   "You just won't rest until you've trashed a setup card will you?",
-   "I'm warning you...",
-   "OK, NOW I'm really warning you...",
-   "Shit's just got real!",
-   "Careful what you wish for..."]
-trashEasterEggIDX = 0
- 
-ScoredColor = "#00ff44"
-SelectColor = "#009900"
-EmergencyColor = "#ff0000"
-DummyColor = "#000000" # Marks cards which are supposed to be out of play, so that players can tell them apart.
-RevealedColor = "#ffffff"
-PriorityColor = "#ffd700"
-InactiveColor = "#888888" # Cards which are in play but not active yer (e.g. see the shell traders)
-
-Xaxis = 'x'
-Yaxis = 'y'
 #---------------------------------------------------------------------------
 # General functions
 #---------------------------------------------------------------------------
@@ -481,11 +368,11 @@ def goToEndTurn(group, x = 0, y = 0):
       return
    if me.Actions > 0: # If the player has not used all their actions for this turn, remind them, just in case.
       if debugVerbosity <= 0 and not confirm("You have not taken all your actions for this turn, are you sure you want to declare end of turn"): return
-   if len(me.hand) > currentHandSize(): #If the player is holding more cards than their hand max. remind them that they need to discard some 
+   if len(me.piles['HQ/Hand']) > currentHandSize(): #If the player is holding more cards than their hand max. remind them that they need to discard some 
                                         # and put them in the end of turn to allow them to do so.
       if endofturn: #If the player has gone through the end of turn phase and still has more hands, allow them to continue but let everyone know.
          if debugVerbosity <= 0 and not confirm("You still hold more cards than your hand size maximum. Are you sure you want to proceed?"): return
-         else: notify(":::Warning::: {} has ended their turn holding more cards ({}) than their hand size maximum of {}".format(me,len(me.hand),currentHandSize()))
+         else: notify(":::Warning::: {} has ended their turn holding more cards ({}) than their hand size maximum of {}".format(me,len(me.piles['HQ/Hand']),currentHandSize()))
       else: # If the player just ended their turn, give them a chance to discard down to their hand maximum.
          if ds == "corp": notify ("The Corporation of {} is performing an Internal Audit before CoB.".format(me))
          else: notify ("Runner {} is rebooting all systems for the day.".format(me))
@@ -507,8 +394,8 @@ def goToSot (group, x=0,y=0):
    if endofturn or currAction or newturn:
       if debugVerbosity <= 0 and not confirm("You have not yet properly ended you previous turn. You need to use F12 after you've finished all your actions.\n\nAre you sure you want to continue?"): return
       else: 
-         if len(me.hand) > currentHandSize(): # Just made sure to notify of any shenanigans
-            notify(":::Warning::: {} has skipped their End-of-Turn phase and they are holding more cards ({}) than their hand size maximum of {}".format(me,len(me.hand),currentHandSize()))
+         if len(me.piles['HQ/Hand']) > currentHandSize(): # Just made sure to notify of any shenanigans
+            notify(":::Warning::: {} has skipped their End-of-Turn phase and they are holding more cards ({}) than their hand size maximum of {}".format(me,len(me.piles['HQ/Hand']),currentHandSize()))
          else: notify(":::Warning::: {} has skipped their End-of-Turn phase".format(me))
          endofturn = False
    if ds == "":
@@ -1028,7 +915,7 @@ def addBrainDmg(group, x = 0, y = 0):
    else: 
       applyBrainDmg()
       notify ("{} suffers 1 Brain Damage.".format(me) )
-      intdamageDiscard(me.hand)
+      intdamageDiscard(me.piles['HQ/Hand'])
 
 def applyBrainDmg(player = me):
    if debugVerbosity >= 1: notify(">>> applyBrainDmg(){}".format(extraASDebug())) #Debug
@@ -1042,7 +929,7 @@ def addMeatDmg(group, x = 0, y = 0):
       notify ("{} prevents 1 Meat Damage.".format(me))
    else: 
       notify ("{} suffers 1 Meat Damage.".format(me))
-      intdamageDiscard(me.hand)
+      intdamageDiscard(me.piles['HQ/Hand'])
 
 def addNetDmg(group, x = 0, y = 0):
    mute()
@@ -1051,7 +938,7 @@ def addNetDmg(group, x = 0, y = 0):
       notify ("{} prevents 1 Net Damage.".format(me))
    else: 
       notify ("{} suffers 1 Net Damage.".format(me))
-      intdamageDiscard(me.hand)
+      intdamageDiscard(me.piles['HQ/Hand'])
       
 def getBit(group, x = 0, y = 0):
    if debugVerbosity >= 1: notify(">>> getBit(){}".format(extraASDebug())) #Debug
@@ -1335,7 +1222,7 @@ def uninstall(card, x=0, y=0, destination = 'hand', silent = False):
    mute()
    storeProperties(card)
    if destination == 'R&D' or destination == 'Stack': group = me.piles['R&D/Stack']
-   else: group = card.owner.hand
+   else: group = card.owner.piles['HQ/Hand']
    #confirm("destination: {}".format(destination)) # Debug
    if Stored_Type[card] == "Tracing" or Stored_Type[card] == "Counter Hold" or Stored_Type[card] == "Data Fort": 
       whisper("This kind of card cannot be uninstalled!")
@@ -1561,7 +1448,7 @@ def chkTargeting(card):
       else: RevealandShuffleWarn = False # Whatever happens, we don't show this message again. 
    if re.search(r'HandTarget', card.AutoScript) or re.search(r'HandTarget', card.AutoAction):
       hasTarget = False
-      for c in me.hand:
+      for c in me.piles['HQ/Hand']:
          if c.targetedBy and c.targetedBy == me: hasTarget = True
       if not hasTarget: 
          whisper(":::Warning::: This card effect requires that you have one of more cards targeted from your hand. Aborting!")
@@ -1614,13 +1501,13 @@ def handDiscard(card):
          elif card.Type == 'Hardware': notify("{} has deleted some spam mail.".format(me))
          elif card.Type == 'Resource': notify("{} has reconfigured some net protocols.".format(me))
          else: notify("{} has power cycled some hardware.".format(me))
-         if len(me.hand) == currentHandSize(): 
+         if len(me.piles['HQ/Hand']) == currentHandSize(): 
             notify("{} has now discarded down to their max handsize of {}".format(me, currentHandSize()))
       else: notify("{} discards {}.".format(me,card))
    else:
       CounterHold = getSpecial('Counter Hold')
       if CounterHold.markers[mdict['virusCockroach']] and CounterHold.markers[mdict['virusCockroach']] >= 2: # Cockroach viruses force you
-            card = me.hand.random()
+            card = me.piles['HQ/Hand'].random()
             notify(":::Info:::{}'s card was selected at random due to their cockroach virus infestation".format(me))
       card.moveTo(me.piles['Archives(Hidden)'])
       if endofturn: 
@@ -1630,7 +1517,7 @@ def handDiscard(card):
          if random == 3: notify("{}'s Corporation has sent some hardware to secure recycling.".format(me))
          if random == 4: notify("{} has sold off some stock options".format(me))
          if random == 5: notify("{} has liquidated some assets.".format(me))
-         if len(me.hand) == currentHandSize(): 
+         if len(me.piles['HQ/Hand']) == currentHandSize(): 
             notify("{} has now discarded down to their max handsize of {}".format(me, currentHandSize()))
       else: notify("{} discards a card.".format(me))
     
@@ -1669,7 +1556,7 @@ def showatrandom(group, count = 1, silent = False):
       card.highlight = RevealedColor
    if not silent: notify("{} reveals {} at random from their hand.".format(me,card))
 
-def groupToDeck (group = me.hand, player = me, silent = False):
+def groupToDeck (group = me.piles['HQ/Hand'], player = me, silent = False):
    if debugVerbosity >= 1: notify(">>> groupToDeck(){}".format(extraASDebug())) #Debug
    mute()
    deck = player.piles['R&D/Stack']
@@ -1679,85 +1566,7 @@ def groupToDeck (group = me.hand, player = me, silent = False):
    if debugVerbosity >= 4: notify("<<< groupToDeck() with return:\n{}\n{}\n{}".format(pileName(group),pileName(deck),count)) #Debug
    else: return(pileName(group),pileName(deck),count) # Return a tuple with the names of the groups.
 
-#------------------------------------------------------------------------------
-# Pile Actions
-#------------------------------------------------------------------------------
-def shuffle(group):
-   if debugVerbosity >= 1: notify(">>> shuffle(){}".format(extraASDebug())) #Debug
-   group.shuffle()
 
-def draw(group):
-   if debugVerbosity >= 1: notify(">>> draw(){}".format(extraASDebug())) #Debug
-   global newturn
-   mute()
-   if len(group) == 0: return
-   card = group.top()
-   if ds == 'corp' and newturn: 
-      card.moveTo(me.hand)
-      notify("--> {} perform's the turn's mandatory draw.".format(me))
-      newturn = False
-   else:
-      ActionCost = useAction()
-      if ActionCost == 'ABORT': return
-      card.moveTo(me.hand)
-      notify("{} to draw a card.".format(ActionCost))
-   storeProperties(card)
-
-def drawMany(group, count = None, destination = None, silent = False):
-   if debugVerbosity >= 1: notify(">>> drawMany(){}".format(extraASDebug())) #Debug
-   if debugVerbosity >= 3: notify("source: {}\ndestination: {}".format(group.name,destination.name))
-   mute()
-   if destination == None: destination = me.hand
-   SSize = len(group)
-   if SSize == 0: return 0
-   if count == None: count = askInteger("Draw how many cards?", 5)
-   if count == None: return 0
-   if count > SSize : 
-      count = SSize
-      whisper("You do not have enough cards in your deck to complete this action. Will draw as many as possible")
-   for c in group.top(count): 
-      c.moveTo(destination)
-      storeProperties(c)
-   if not silent: notify("{} draws {} cards.".format(me, count))
-   if debugVerbosity >= 4: notify("<<< drawMany() woth return: {}".format(count))
-   return count
-
-def toarchives(group = me.piles['Archives(Hidden)']):
-   if debugVerbosity >= 1: notify(">>> toarchives(){}".format(extraASDebug())) #Debug
-   mute()
-   Archives = me.piles['Trash/Archives(Face-up)']
-   for c in group: c.moveTo(Archives)
-   #Archives.shuffle()
-   notify ("{} moves Hidden Archives to their Face-Up Archives.".format(me))
-
-def archivestoStack(group, silent = False):
-   if debugVerbosity >= 1: notify(">>> archivestoStack(){}".format(extraASDebug())) #Debug
-   mute()
-   deck = me.piles['R&D/Stack']
-   for c in group: c.moveTo(deck)
-   #Archives.shuffle()
-   if not silent: notify ("{} moves their {} to {}.".format(me,pileName(group),pileName(deck)))
-   else: return(pileName(group),pileName(deck))
-
-def mill(group):
-   if debugVerbosity >= 1: notify(">>> mill(){}".format(extraASDebug())) #Debug
-   if len(group) == 0: return
-   mute()
-   count = askInteger("Mill how many cards?", 1)
-   if count == None: return
-   if ds == "runner": destination = me.piles['Trash/Archives(Face-up)']
-   else: destination = me.piles['Archives(Hidden)']
-   for c in group.top(count): c.moveTo(destination)
-   notify("{} mills the top {} cards from their {} to {}.".format(me, count,pileName(group),pileName(destination)))
-
-def moveXtopCardtoBottomStack(group):
-   if debugVerbosity >= 1: notify(">>> moveXtopCardtoBottomStack(){}".format(extraASDebug())) #Debug
-   mute()
-   if len(group) == 0: return
-   count = askInteger("Move how many cards?", 1)
-   if count == None: return
-   for c in group.top(count): c.moveToBottom(group)
-   notify("{} moves the top {} cards from their {} to the bottom of {}.".format(me, count,pileName(group),pileName(group)))
 
 #------------------------------------------------------------------------------
 # AutoScripts
@@ -2520,13 +2329,13 @@ def DrawX(Autoscript, announceText, card, targetCards = None, notification = Non
       if targetPL.getGlobalVariable('ds') == 'corp': destination = targetPL.piles['Archives(Hidden)']
       else: destination = targetPL.piles['Trash/Archives(Face-up)']
       destiVerb = 'trash'   
-   else: destination = targetPL.hand
+   else: destination = targetPL.piles['HQ/Hand']
    if destiVerb == 'draw' and ModifyDraw > 0 and not confirm("You have a card effect in play that modifies the amount of cards you draw. Do you want to continue as normal anyway?\n\n(Answering 'No' will abort this action so that you can prepare for the special changes that happen to your draw."): return 'ABORT'
    draw = num(action.group(1))
    if draw == 999:
       multiplier = 1
-      if currentHandSize(targetPL) >= len(targetPL.hand): # Otherwise drawMany() is going to try and draw "-1" cards which somehow draws our whole deck except one card.
-         count = drawMany(source, currentHandSize(targetPL) - len(targetPL.hand), destination, True) # 999 means we refresh our hand
+      if currentHandSize(targetPL) >= len(targetPL.piles['HQ/Hand']): # Otherwise drawMany() is going to try and draw "-1" cards which somehow draws our whole deck except one card.
+         count = drawMany(source, currentHandSize(targetPL) - len(targetPL.piles['HQ/Hand']), destination, True) # 999 means we refresh our hand
       else: count = 0 
       #confirm("cards drawn: {}".format(count)) # Debug
    else: # Any other number just draws as many cards.
@@ -2557,10 +2366,10 @@ def DiscardX(Autoscript, announceText, card, targetCards = None, notification = 
    discardNR = num(action.group(1))
    if discardNR == 999:
       multiplier = 1
-      discardNR = len(targetPL.hand) # 999 means we discard our whole hand
+      discardNR = len(targetPL.piles['HQ/Hand']) # 999 means we discard our whole hand
    else: # Any other number just discard as many cards at random.
       multiplier = per(Autoscript, card, n, targetCards, notification)
-      count = handRandomDiscard(targetPL.hand, discardNR * multiplier, targetPL, silent = True)
+      count = handRandomDiscard(targetPL.piles['HQ/Hand'], discardNR * multiplier, targetPL, silent = True)
       if re.search(r'isCost', Autoscript) and count < discardNR:
          whisper("You do not have enough cards in your hand to discard")
          return ('ABORT',0)
@@ -2580,7 +2389,7 @@ def ReshuffleX(Autoscript, announceText, card, targetCards = None, notification 
    action = re.search(r'\bReshuffle([A-Za-z& ]+)', Autoscript)
    if debugVerbosity >= 1: notify("!!! regex: {}".format(action.groups())) # Debug
    if action.group(1) == 'HQ' or action.group(1) == 'Stack':
-      namestuple = groupToDeck(targetPL.hand, targetPL , True) # We do a silent hand reshuffle into the deck, which returns a tuple
+      namestuple = groupToDeck(targetPL.piles['HQ/Hand'], targetPL , True) # We do a silent hand reshuffle into the deck, which returns a tuple
       X = namestuple[2] # The 3rd part of the tuple is how many cards were in our hand before it got shuffled.
    elif action.group(1) == 'Archives' or action.group(1) == 'Trash':
       if targetPL.getGlobalVariable('ds') == "corp": groupToDeck(targetPL.piles['Archives(Hidden)'], targetPL , True)
@@ -2859,11 +2668,11 @@ def InflictX(Autoscript, announceText, card, targetCards = None, notification = 
          preventTXT = ' ({} prevented)'.format(DMGprevented)
          DMG -= DMGprevented
       for DMGpt in range(DMG): #Start applying the damage
-         if len(targetPL.hand) == 0 or currentHandSize(targetPL) == 0: 
+         if len(targetPL.piles['HQ/Hand']) == 0 or currentHandSize(targetPL) == 0: 
             notify(":::Warning:::{} has flatlined!".format(targetPL)) #If the target does not have any more cards in their hand, inform they've flatlined.
             break
          else: #Otherwise, warn the player doing it for the first time
-            DMGcard = targetPL.hand.random() # Pick a random card from their hand
+            DMGcard = targetPL.piles['HQ/Hand'].random() # Pick a random card from their hand
             if targetPL.getGlobalVariable('ds') == 'corp': DMGcard.moveTo(targetPL.piles['Archives(Hidden)']) # If they're a corp, move it to the hidden archive
             else: DMGcard.moveTo(targetPL.piles['Trash/Archives(Face-up)']) #If they're a runner, move it to trash.
             if action.group(3) == 'Brain':  
@@ -3017,7 +2826,7 @@ def per(Autoscript, card = None, count = 0, targetCards = None, notification = N
                   else:
                      perItemMatch.append(regexCondition.group(1))
          if debugVerbosity >= 2: notify('+++ Matches: {}\nExclusions: {}'.format(perItemMatch, perItemExclusion)) # Debug
-         if re.search(r'fromHand', Autoscript): cardgroup = [c for c in me.hand]
+         if re.search(r'fromHand', Autoscript): cardgroup = [c for c in me.piles['HQ/Hand']]
          else: cardgroup = [c for c in table if c.highlight != DummyColor and c.highlight != RevealedColor and c.highlight != InactiveColor]
          for c in cardgroup: # Go through each card on the table and gather its properties, then see if they match.
             del cardProperties[:] # Cleaning the previous entries
@@ -3077,7 +2886,7 @@ def per(Autoscript, card = None, count = 0, targetCards = None, notification = N
          if re.search(r'Reveal&Recover', Autoscript) and len(revealedCards) > 0: 
             confirm("The cards you've just revealed will be returned to your hand once your opponents have had a chance to look at them.\
                    \nOnce you are ready, press any button to return them to your hand.")
-            for c in revealedCards: c.moveTo(me.hand)
+            for c in revealedCards: c.moveTo(me.piles['HQ/Hand'])
             notify("- {} returns the revealed cards back into their hand".format(me))
       else: #If we're not looking for a particular target, then we check for everything else.
          if debugVerbosity >= 3: notify("### Doing no table lookup") # Debug.
@@ -3189,7 +2998,7 @@ def CustomScript(card, action = 'play'): # Scripts that are complex and fairly u
          else: pass # We leave the last ice were it was.
       confirm("Your unrezzed Ice has been turn face down and slightly scrambled to throw off your opponent. You can close this window and continue exchanging pairs")
    elif card.name == 'Dr. Dreff' and action == 'use':
-      for c in me.hand:
+      for c in me.piles['HQ/Hand']:
          if c.targetedBy and c.targetedBy == me:
             if c.type != 'Ice':
                whisper(":::ERROR::: Invalid Card. Please Select an Ice")
@@ -3206,7 +3015,7 @@ def CustomScript(card, action = 'play'): # Scripts that are complex and fairly u
                                \n\nHow many bits do you want to hide?\n\nMin: 2\nMax: {}".format(me.counters['Bit Pool'].value),2)
          if hiddenCount == None: 
             notify("{} has aborted their Social Engineering attempt".format(me))
-            card.moveTo(me.hand)
+            card.moveTo(me.piles['HQ/Hand'])
             me.counters['Bit Pool'].value += 1
             me.counters['Actions'].value += 1
             return
@@ -3275,7 +3084,7 @@ def CustomScript(card, action = 'play'): # Scripts that are complex and fairly u
          notify("--> Lucidrine™ Drip Feed: Gain 1 actions.")
       else: 
          card.markers[DripMarker] = 0
-         intdamageDiscard(me.hand)
+         intdamageDiscard(me.piles['HQ/Hand'])
          applyBrainDmg()
          notify("--> Lucidrine™ Drip Feed: Causes 1 brain damage.")
    elif card.name == 'On the Fast Track' and action == 'play':
@@ -3287,7 +3096,7 @@ def CustomScript(card, action = 'play'): # Scripts that are complex and fairly u
          notify("{} gains {} for trashing a transaction this turn".format(me,uniBit(6)))
    elif card.name == 'The Shell Traders':
       if action == 'use':
-         targetList = [c for c in me.hand  # First we see if they've targeted a card from their hand
+         targetList = [c for c in me.piles['HQ/Hand']  # First we see if they've targeted a card from their hand
                         if c.targetedBy 
                         and c.targetedBy == me 
                         and (c.Type == 'Program' or c.Type == 'Hardware')]
@@ -3509,7 +3318,7 @@ def markerEffects(Time = 'Start'):
          RollX(passedScript, "Opponent's Incubate virus:", CounterHold, notification = 'Automatic')
       if marker == mdict['virusBoardwalk'] and Time == 'Start':
          confirm("You are about to move cards out of another player's hand. Please ask them not to manipulate their hand, until all cards are on the table")
-         showatrandom(targetPL.hand, count, silent = True)
+         showatrandom(targetPL.piles['HQ/Hand'], count, silent = True)
          notify("--> {} forces {} to show him {} cards at random from their hand".format(me,targetPL,count))
    # Checking triggers from markers the rest of our cards.
    cardList = [c for c in table if c.markers]
