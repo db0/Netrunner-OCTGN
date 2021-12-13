@@ -327,11 +327,11 @@ def cheight(card, divisor = 10):
    else: offset = card.height / divisor
    return (card.height + offset)
 
-def yaxisMove(card, divisor = 50):
+def yaxisMove(card, divisor = 0):
    #if debugVerbosity >= 1: notify(">>> yaxisMove(){}".format(extraASDebug())) #Debug
 # Variable to move the cards played by player 2 on a 2-sided table, more towards their own side. 
 # Player's 2 axis will fall one extra card length towards their side.
-# This is because of bug #146 (https://github.com/kellyelton/OCTGN/issues/146)
+# This is because of bug #146 (https://github.com/kellyelton/OCTGN/issues/146) ...was fixed so useless now, set divisor to 0 !
    if me.isInverted: cardmove = cheight(card, divisor)
    else: cardmove = cardmove = 0
    return cardmove
@@ -486,7 +486,7 @@ def ImAProAtThis(group = table, x=0, y=0):
 #------------------------------------------------------------------------------
 
 def createStartingCards():
-   placement_offset_divisor = 50
+   placement_offset_divisor = 0
    if debugVerbosity >= 1: notify(">>> createStartingCards(){}".format(extraASDebug())) #Debug
    traceCard = table.create("c0f18b5a-adcd-4efe-b3f8-7d72d1bd1db8", 0, 155 * playerside, 1, True) #The Trace card
    traceCard.moveToTable(0,155*playerside - yaxisMove(traceCard,placement_offset_divisor),True)
