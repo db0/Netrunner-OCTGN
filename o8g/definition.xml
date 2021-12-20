@@ -3,9 +3,10 @@
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
       name="Netrunner" 
       id="13568561-7a2e-4572-8f31-3d99580ab245" 
-      octgnVersion="3.1.0.0" 
-      version="3.1.1.0" 
+      octgnVersion="3.4.362.0" 
+      version="3.4.362.0" 
       markersize="16"
+	  scriptVersion="3.1.0.2"
       tags="asymmetric cyberpunk CCG bluff duel"
       description="This is the original Netrunner game from 1996!&#xD;&#xD;&#xD;Netrunner s an asymmetrical cyberpunk Card Game for two players.&#xD;&#xD;Set in the dystopian future of Cyberpunk 2020, the game pits an anonymous megacorporation and its massive resources against the subversive talents of lone runners.&#xd;&#xd;Automation rank: A&#xd;(This game definition contains significant cards automations to allow the game to play faster with less mistakes.)"
       setsurl="https://github.com/db0/Netrunner-OCTGN#available-sets"
@@ -13,6 +14,8 @@
       authors="Db0, toon"
       iconurl="https://raw.github.com/db0/Netrunner-OCTGN/master/netrunner_logo.jpg">
 	<scripts>
+		<script src="Scripts/constants.py" />
+		<script src="Scripts/pileactions.py" />
 		<script src="Scripts/actions.py" />
 	</scripts>
    <fonts>
@@ -43,7 +46,9 @@
 		<property name="RaritySealed" type="String" hidden="True" ignoreText="True" textKind="Enum" />
 
 	</card>
-	<table name="Table" visibility="undefined" ordered="False" width="1080" height="671" board="Table/nr_board.png" boardPosition="-540,-335,1080,671" background="Table/background.jpg" backgroundStyle="uniformToFill">
+	<gameboards src="Table/nr_board.png" x="-540" y="-335" width="1080" height="671">
+	</gameboards>
+	<table name="Table" visibility="undefined" ordered="False" width="1080" height="671" background="Table/background.jpg" backgroundStyle="uniformToFill">
 		<cardaction menu="Use Card Ability/Clear" default="True" execute="useAbility" />
 		<cardaction menu="Clear Card" default="False" execute="clear" />
 		<groupactions menu="Game...">
@@ -110,14 +115,15 @@
 		<groupaction menu="Create new Subsidiary Data Fort" default="False" execute="createSDF" />
 		<groupaction menu="Roll d6" default="False" shortcut="Ctrl+6" execute="rolld6" />
 		<groupaction menu="&#9166; Receive &#10122;" default="False" shortcut="Ctrl+B" execute="getBit" />
-        
-		
+      
 	</table>
+	
+	
 	<player summary="Actions {#Actions} / Bits {#Bit Pool} / Hand {#HQ/Hand} / APs {#Agenda Points} / Tags {#Tags}">
       <globalvariable name="ds" value="" /> 
       <globalvariable name="specialCards" value="{}" /> 
       <globalvariable name="wasNoisy" value="0" /> 
-		<hand name="HQ/Hand" visibility="me" ordered="False" width="63" height="88" icon="Groups/hand.png">
+		<group viewState="expanded" name="HQ/Hand" visibility="me" ordered="False" width="63" height="88" icon="Groups/hand.png">
 			<cardaction menu="&#9166; Pay and Install Card" default="True" shortcut="enter" execute="intPlay" />
 			<cardaction menu="Install Card at no cost" default="False" execute="playForFree" />
 			<cardactions menu="Move ...">
@@ -130,7 +136,7 @@
 			<groupaction menu="Trash/Archive a Card at Random" default="False" execute="handRandomDiscard" />
 			<groupaction menu="Show a Card at Random" default="False" execute="showatrandom"/>
 			<groupaction menu="Move to R&amp;D/Stack" default="False" execute="grouptoStack"/>
-		</hand>
+		</group>
 
 		<group name="R&amp;D/Stack" visibility="none" ordered="False" width="63" height="88" icon="Groups/library.png" collapsed="False">
 			<groupaction menu="Shuffle" default="False" execute="shuffle" />
@@ -165,4 +171,36 @@
 	<deck>
 		<section name="R&amp;D / Stack" group="R&amp;D/Stack" />
 	</deck>
+	<markers>
+		<marker id="8c48db01-4f12-4653-a31a-3d22e9f5b6e9" name="Boardwalk virus" src="Sets/Markers/Markers/8c48db01-4f12-4653-a31a-3d22e9f5b6e9.png" />
+		<marker id="5831fb18-7cdf-44d2-8685-bdd392bb9f1c" name="Butcher Boy virus" src="Sets/Markers/Markers/5831fb18-7cdf-44d2-8685-bdd392bb9f1c.png"/>
+		<marker id="723a0cca-7a05-46a8-a681-6e06666042ee" name="Cascade virus" src="Sets/Markers/Markers/723a0cca-7a05-46a8-a681-6e06666042ee.png" />
+		<marker id="cda4cfcb-6f2d-4a7f-acaf-d796b8d1edee" name="Cockroach virus" src="Sets/Markers/Markers/cda4cfcb-6f2d-4a7f-acaf-d796b8d1edee.png" />
+		<marker id="811b9153-93cb-4898-ad9f-68864452b9f4" name="Thought virus" src="Sets/Markers/Markers/811b9153-93cb-4898-ad9f-68864452b9f4.png" />
+		<marker id="032d2efa-e722-4218-ba2b-699dc80f0b94" name="Gremlin virus" src="Sets/Markers/Markers/032d2efa-e722-4218-ba2b-699dc80f0b94.png" />
+		<marker id="72c89567-72aa-446d-a9ea-e158c22c113a" name="Fait virus" src="Sets/Markers/Markers/72c89567-72aa-446d-a9ea-e158c22c113a.png" />
+		<marker id="4a8437f0-fa7c-4221-b84c-68c3700ee5d1" name="Spy virus" src="Sets/Markers/Markers/4a8437f0-fa7c-4221-b84c-68c3700ee5d1.png" />
+		<marker id="eccc2ee3-2bca-4563-8196-54de4909d313" name="Incubate virus" src="Sets/Markers/Markers/eccc2ee3-2bca-4563-8196-54de4909d313.png" />
+		<marker id="93a124c4-d2fe-4f58-9531-1396675c64dd" name="Pattel virus" src="Sets/Markers/Markers/93a124c4-d2fe-4f58-9531-1396675c64dd.png" />
+		<marker id="b384957d-22c5-4e7d-a508-3990c82f4df6" name="Generic" src="Sets/Markers/Markers/b384957d-22c5-4e7d-a508-3990c82f4df6.png" />
+		<marker id="73b8d1f2-cd54-41a9-b689-3726b7b86f4f" name="Advance" src="Sets/Markers/Markers/73b8d1f2-cd54-41a9-b689-3726b7b86f4f.png" />
+		<marker id="10254d1f-6335-4b90-b124-b01ec131dd07" name="Scored" src="Sets/Markers/Markers/10254d1f-6335-4b90-b124-b01ec131dd07.png" />
+		<marker id="8105e4c7-cb54-4421-9ae2-4e276bedee90" name="Not rezzed" src="Sets/Markers/Markers/8105e4c7-cb54-4421-9ae2-4e276bedee90.png" />
+		<marker id="ae34ee21-5309-46b3-98de-9d428f59e243" name="Derezzed" src="Sets/Markers/Markers/ae34ee21-5309-46b3-98de-9d428f59e243.png" />
+		<marker id="01feb523-ac36-4dcd-970a-515aa8d73e37" name="Trace value" src="Sets/Markers/Markers/01feb523-ac36-4dcd-970a-515aa8d73e37.png" />
+		<marker id="3c429e4c-3c7a-49fb-96cc-7f84a63cc672" name="Link value" src="Sets/Markers/Markers/3c429e4c-3c7a-49fb-96cc-7f84a63cc672.png" />
+		<marker id="19be5742-d233-4ea1-a88a-702cfec930b1" name="Bits" src="Sets/Markers/Markers/19be5742-d233-4ea1-a88a-702cfec930b1.png" />
+		<marker id="f6230db2-d222-445f-85dd-406ea12d92f6" name="Permanent +1" src="Sets/Markers/Markers/f6230db2-d222-445f-85dd-406ea12d92f6.png" />
+		<marker id="aa261722-e12a-41d4-a475-3cc1043166a7" name="Temporary +1" src="Sets/Markers/Markers/aa261722-e12a-41d4-a475-3cc1043166a7.png" />
+		<marker id="48ceb18b-5521-4d3f-b5fb-c8212e8bcbae" name="Temporary -1" src="Sets/Markers/Markers/48ceb18b-5521-4d3f-b5fb-c8212e8bcbae.png" />
+		<marker id="f50fbac7-a147-4941-8d77-56cf9ea672ea" name="Meat damage protection" src="Sets/Markers/Markers/f50fbac7-a147-4941-8d77-56cf9ea672ea.png" />
+		<marker id="84527bb1-6b34-4ace-9b11-7e19a6e353c7" name="Net damage protection" src="Sets/Markers/Markers/84527bb1-6b34-4ace-9b11-7e19a6e353c7.png" />
+		<marker id="8a0612d7-202b-44ec-acdc-84ff93e7968d" name="Brain damage protection" src="Sets/Markers/Markers/8a0612d7-202b-44ec-acdc-84ff93e7968d.png" />
+		<marker id="42072423-2599-4e70-80b6-56127b7177d9" name="Net &amp; Brain damage protection" src="Sets/Markers/Markers/42072423-2599-4e70-80b6-56127b7177d9.png" />
+		<marker id="04d72620-17d1-4189-9abb-a2c48ddf7d42" name="Complete damage protection" src="Sets/Markers/Markers/04d72620-17d1-4189-9abb-a2c48ddf7d42.png" />
+		<marker id="6242317f-b706-4e39-b60a-32958d00a8f8" name="Virus Protection" src="Sets/Markers/Markers/6242317f-b706-4e39-b60a-32958d00a8f8.png" />
+		<marker id="05250943-0c9f-4486-bb96-481c025ce0e0" name="Brain Damage" src="Sets/Markers/Markers/05250943-0c9f-4486-bb96-481c025ce0e0.png" />
+		<marker id="6e46d937-786c-4618-b02c-d7d5ffd3b1a5" name="Daemon MU" src="Sets/Markers/Markers/6e46d937-786c-4618-b02c-d7d5ffd3b1a5.png" />
+		<marker id="226b0f44-bbdc-4960-86cd-21f404265562" name="Base Link" src="Sets/Markers/Markers/226b0f44-bbdc-4960-86cd-21f404265562.png" />
+	</markers>
 </game>
